@@ -10,6 +10,9 @@ namespace MoneyCounterSite.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.urlSrc1 = Url.Content("~/Content/img/piechart_78388.png");
+            ViewBag.urlSrc2 = Url.Content("~/Content/img/safebox_78389.png");
+            ViewBag.urlSrc3 = Url.Content("~/Content/img/profits_78367.png");
             return View();
         }
 

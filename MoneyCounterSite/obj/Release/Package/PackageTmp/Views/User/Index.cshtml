@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "User Profile";
+
+
+}
+
+
+<div class="card card-body mt-2">
+    <div class="row">
+        <div class="col-md-12">
+
+
+            <input type="text" id="userid" class="d-none" value=@ViewBag.UserID />
+
+
+
+            <p>
+                @ViewBag.FamilyName
+                @foreach (var person in @ViewBag.FamilyMember)
+                {
+                    <span class="badge badge-secondary">@person.UserName</span>
+
+                }
+            </p>
+
+           
+
+            <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#staticBackdrop">
+                Добавить члена семьи
+            </button>
+
+            
+
+        </div>
+    </div>
+
+
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+
+    </div>
+
+</div>
+
+
+
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Создание социальной ячейки общества </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Как назвать? </label>
+                    <input type="text" class="form-control" id="FamilyName" required>
+                </div>
+                <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Уникальный код члена семьи</label>
+                    <input type="text" class="form-control" id="idUserAdd" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Назад</button>
+                <button type="button" class="btn btn-primary" onclick="createFamily()">Добавить</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
